@@ -6,7 +6,6 @@
 public class DoMath {
 
 	public static void main(String[] args) {
-		Calculate.square (-3);
+		System.out.println(Calculate.cube(-3));
 	}
-
 }
