@@ -48,9 +48,6 @@ public class Calculate {
 	}
 	
 	public static boolean isDivisibleBy(int a, int b) {
-		if (b==0) {
-			throw new IllegalArgumentException();
-		}
 		if (a % b == 0) {
 			return true;
 		} else {
@@ -123,8 +120,6 @@ public class Calculate {
 	}
 	
 	public static int factorial(int a) {
-		if (a<0)
-			throw new IllegalArgumentException();
 		int answer = a;
 		for (int n = a; n >= 2; n--) {
 			answer *= n - 1;
@@ -170,9 +165,6 @@ public class Calculate {
 		// N is number to square root and then A is educated guess
 		// repeatedly replace educated guess
 		// return root
-		if (n<0) {
-			throw new IllegalArgumentException();
-		}
 		double root = 0;
 		double A = n / 2;
 		while (root != (n / A + A) / 2) {
@@ -183,5 +175,4 @@ public class Calculate {
 		return answer;
 	}
 }
-	
 	
