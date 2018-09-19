@@ -6,20 +6,20 @@
  */
 public class Calculate {
 
-	public static int square(int number) {
-		return number*number;
+	public static int square(int a) {
+		return a*a;
 	}
 	
-	public static int cube(int number) {
-		return number*number*number;
+	public static int cube(int a) {
+		return a*a*a;
 	}
 	
-	public static double average(double number1, double number2) {
-		return (number1 + number2)/2;
+	public static double average(double a, double b) {
+		return (a + b)/2;
 	}
 	
-	public static double average(double number1, double number2, double number3) {
-		return (number1 + number2 + number3)/3;
+	public static double average(double a, double b, double c) {
+		return (a + b + c)/3;
 	}
 	
 	public static double toDegrees(double radian) {
@@ -59,7 +59,7 @@ public class Calculate {
 		if (a > 0) {
 			return a;
 		} else if (a == 0) {
-			return 0.;
+			return 0;
 		} else {
 			return -a;
 		}
@@ -109,9 +109,6 @@ public class Calculate {
 		if (b==0) {
 			return 1;
 		}
-		if (b<0) {
-			throw new IllegalArgumentException();
-		}
 		double result = a;
 		for (int x = 2; x <= b; x++) {
 			result *= a;
@@ -126,7 +123,7 @@ public class Calculate {
 		}
 		return answer;
 	}
-
+	
 	public static boolean isPrime(int number) {
 		/*
 		 * Need a variable to count number of variables name it factors count starts at
@@ -174,5 +171,8 @@ public class Calculate {
 		double answer = round2(root);
 		return answer;
 	}
+}
+		
+	
 }
 	

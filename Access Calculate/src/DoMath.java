@@ -6,6 +6,6 @@
 public class DoMath {
 
 	public static void main(String[] args) {
-		System.out.println(Calculate.toRadians(572));
+		System.out.println(Calculate.round2(12.1234));
 	}
 }
