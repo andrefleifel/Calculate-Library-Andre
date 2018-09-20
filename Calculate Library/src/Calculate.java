@@ -123,6 +123,74 @@ public class Calculate {
 		}
 
 	}
+	
+	public static double exponent(double a, int b) {
+		if (b==0) {
+			return 1;
+		}
+		double result = a;
+		for (int x = 2; x <= b; x++) {
+			result *= a;
+		}
+		return result;
+	}
+	
+	public static int factorial(int a) {
+		int answer = a;
+		for (int n = a; n >= 2; n--) {
+			answer *= n - 1;
+		}
+		return answer;
+	}
+	
+	public static boolean isPrime(int number) {
+		/*
+		 * Need a variable to count number of variables name it factors count starts at
+		 * 1 because has at least itself
+		 */
+		int factorCount = 1;
+		for (int i = 2; i < number; i++) {
+			boolean test = isDivisibleBy(number, i);
+			if (test == true) {
+				factorCount++;
+			}
+		}
+		if (factorCount > 1) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public static int gcf(int greaterN, int lesserN) {
+		int A = greaterN;
+		int B = lesserN;
+		int result;
+		while (B != 0) {
+			result = A % B;
+			A = B;
+			B = result;
+		}
+		return A;
+	}
+
+	
+	public static double sqrt(double n) {
+		// how will I get the square root? loop?
+		// square root of N is about= ½(N/A + A)
+		// N is number to square root and then A is educated guess
+		// repeatedly replace educated guess
+		// return root
+		double root = 0;
+		double A = n / 2;
+		while (root != (n / A + A) / 2) {
+			root = (n / A + A) / 2;
+			A = root;
+		}
+		double answer = round2(root);
+		return answer;
+	}
+	
 }
 
 	
