@@ -6,6 +6,6 @@
 public class DoMath {
 
 	public static void main(String[] args) {
-		System.out.println(Calculate.round2(12.1234));
+		System.out.println(Calculate.max(19,24,32));
 	}
 }
