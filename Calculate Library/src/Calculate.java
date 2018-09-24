@@ -124,6 +124,7 @@ public class Calculate {
 
 	}
 	
+	//A call to exponent raises a value to a positive integer power.
 	public static double exponent(double a, int b) {
 		if (b==0) {
 			return 1;
@@ -135,6 +136,7 @@ public class Calculate {
 		return result;
 	}
 	
+	//A call to factorial returns the factorial of the value passed.
 	public static int factorial(int a) {
 		int answer = a;
 		for (int n = a; n >= 2; n--) {
@@ -143,11 +145,8 @@ public class Calculate {
 		return answer;
 	}
 	
+	//A call to isPrime determines whether or not an integer is prime.
 	public static boolean isPrime(int number) {
-		/*
-		 * Need a variable to count number of variables name it factors count starts at
-		 * 1 because has at least itself
-		 */
 		int factorCount = 1;
 		for (int i = 2; i < number; i++) {
 			boolean test = isDivisibleBy(number, i);
@@ -162,6 +161,7 @@ public class Calculate {
 		}
 	}
 
+	//A call to gcf finds the greatest common factor of two integers.
 	public static int gcf(int greaterN, int lesserN) {
 		int A = greaterN;
 		int B = lesserN;
@@ -174,13 +174,9 @@ public class Calculate {
 		return A;
 	}
 
-	
+	//A call to sqrt returns an approximation of the square root of the
+	//value passed, rounded to two decimal places.
 	public static double sqrt(double n) {
-		// how will I get the square root? loop?
-		// square root of N is about= ½(N/A + A)
-		// N is number to square root and then A is educated guess
-		// repeatedly replace educated guess
-		// return root
 		double root = 0;
 		double A = n / 2;
 		while (root != (n / A + A) / 2) {
