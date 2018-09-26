@@ -50,19 +50,20 @@ public class Calculate {
 	}
 	
 	//A call to toMixedNum converts an improper fraction into a mixed number.
-	public static String toMixedNumber(int a, int b) {
+	public static String toMixedNum(int a, int b) {
 		return a / b + " " + a % b + "/" + b;
 	}
 	
 	//A call to foil converts a binomial multiplication of the form (ax + b)(cx + d)
 	//into a quadratic equation of the form ax^2 + bx + c. 
 	public static String foil(int a, int b, int c, int d) {
-		return a * c + "x^2" + "+" + (a * d + b * c) + "x" + b * d;
+		return (a * c) + "x^2" + " + " + (a * d + b * c) + "x" + " + " + b * d;
 	}
 	
 	//A call to isDivisibleBy determines whether or not one integer is
 	//evenly divisible by another.
 	public static boolean isDivisibleBy(int a, int b) {
+		if (b==0) throw new IllegalArgumentException("The second number cant't be 0.");
 		if (a % b == 0) {
 			return true;
 		} else {
@@ -126,6 +127,7 @@ public class Calculate {
 	
 	//A call to exponent raises a value to a positive integer power.
 	public static double exponent(double a, int b) {
+		if (b<0) throw new IllegalArgumentException("Sorry! Number can't be negative.");
 		if (b==0) {
 			return 1;
 		}
@@ -138,6 +140,7 @@ public class Calculate {
 	
 	//A call to factorial returns the factorial of the value passed.
 	public static int factorial(int a) {
+		if (a<0) throw new IllegalArgumentException("Sorry! Number can't be negative.");
 		int answer = a;
 		for (int n = a; n >= 2; n--) {
 			answer *= n - 1;
@@ -177,6 +180,7 @@ public class Calculate {
 	//A call to sqrt returns an approximation of the square root of the
 	//value passed, rounded to two decimal places.
 	public static double sqrt(double n) {
+		if (n<0) throw new IllegalArgumentException("Sorry! Number can't be negative.");
 		double root = 0;
 		double A = n / 2;
 		while (root != (n / A + A) / 2) {
