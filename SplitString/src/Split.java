@@ -46,9 +46,9 @@ public class Split {
 
 * What if it's a fancy sandwich with multiple pieces of bread?
 
-*/
-		System.out.println(Arrays.toString("applespineapplesbreadlettustomatobaconmayohambreadcheese".split("bread")));
-		splitSandwich("applespineapplesbreadlettustomatobaconmayohambreadcheese");
+*/	
+		Split.part1();
+		
 //Your task pt 2:
 
 /*Write a method that take in a string like
@@ -64,49 +64,20 @@ public class Split {
 * Again, what if it's a fancy sandwich with multiple pieces of bread?
 
 */
-		System.out.println(Arrays.toString("apples pineapples bread lettus tomato bacon mayo ham bread cheese".split(" bread ")));
-		splitSandwichwithSpaces("apples pineapples bread lettus tomato bacon mayo ham bread cheese");
+		
+		Split.part2();
  }
+		
 //task pt.1
-	public static void splitSandwich (String sandwich) {
-		String[] components = sandwich.split("bread");
-		int bottomBread = sandwich.indexOf("bread");
-		int topBread = sandwich.indexOf("bread");
-
-		if(bottomBread < 0) {
-			System.out.println("not a sandwich");
-		}else if(bottomBread >=0 && topBread <0) {
-			System.out.println("not a sandwich");
-		}else if(components == null) {
-			System.out.println("not a sandwich");
+		public static void part1() {
+			String[] part1 = "applespineapplesbreadlettucetomatobaconmayohambreadcheese".split("bread");
+			System.out.println(part1[1]);
 		}
-		else {
-			String middle;
-			if(bottomBread == topBread) {
-				System.out.println("not a sandwich");
-			}else {
-				middle = sandwich.substring(bottomBread+5, topBread);
-				System.out.println(middle);
-			}
-		}
-	}
+		
 	//task pt.2
-	public static void splitSandwichwithSpaces (String sandwich) {
-		int bottomBread = sandwich.indexOf("bread");
-		int topBread = sandwich.indexOf("bread" , bottomBread+5);
-		if( bottomBread > 0) {
-			String middle = sandwich.substring(bottomBread+6 , topBread);
-			if (middle.length() > 1) {
-				String[] realSandwich = middle.split(" ");
-				String newSandwich = Arrays.toString(realSandwich);
-				sandwich = newSandwich;
-			}else if (middle.length() < 1){
-				sandwich = "not a sandwich";
-			}else {
-				sandwich = "not a sandwich";
-
-			}
-			System.out.println(sandwich);
+		public static void part2() {
+			String[] part2 = ("apples pineapples bread lettuce tomato bacon mayo ham bread cheese".split("bread"));
+			System.out.println(part2[1]);
 		}
-	}
+	
 }
